@@ -9,7 +9,7 @@ CREATE TABLE Endereco (
 CREATE TABLE Departamento (
     id_departamento INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(60) NOT NULL,
-    filial VARCHAR(20) NOT NULL UNIQUE
+    filial VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE Financa (
@@ -20,10 +20,10 @@ CREATE TABLE Financa (
 
 CREATE TABLE Projeto (
     id_projeto INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(70) NOT NULL UNIQUE,
+    nome VARCHAR(70) NOT NULL,
     id_financa INT,
     custo DECIMAL(10,2) NOT NULL CHECK (custo > 0),
-	FOREIGN KEY (id_financa) REFERENCES Financa(id_financa)
+    FOREIGN KEY (id_financa) REFERENCES Financa(id_financa)
 );
 
 CREATE TABLE Pesquisador (
@@ -33,7 +33,10 @@ CREATE TABLE Pesquisador (
     id_endereco INT,
     id_departamento INT,
     id_projeto INT,
-    valor_bolsa DECIMAL(10,2) NOT NULL CHECK (valor_bolsa > 0)
+    valor_bolsa DECIMAL(10,2) NOT NULL CHECK (valor_bolsa > 0),
+	FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco),
+    FOREIGN KEY (id_departamento) REFERENCES Departamento(id_departamento),
+    FOREIGN KEY (id_projeto) REFERENCES Projeto(id_projeto)
 );
 
 -- Tabela Endereco
