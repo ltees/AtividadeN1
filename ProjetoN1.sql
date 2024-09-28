@@ -59,21 +59,13 @@ VALUES ('Boa Vista', 'Roraima'),
 
 -- Tabela Departamento
 INSERT INTO Departamento (nome, filial)
-VALUES ('DIDES', 'Boa Vista'),
-       ('DIMAC', 'Palmas'),
-       ('DIRUR','Porto Alegre'),
-       ('DIMAC','Macapa'),
-       ('DIDES','Belem'),
-       ('DIDES','Palmas'),
-       ('DIDES','Boa Vista'),
-       ('DIRUR','Florianopolis'),
-       ('DIMAC','Porto Velho'),
-       ('DIDES','Rio Branco'),
-       ('DINTE','Cabo Frio'),
-       ('DISOC','Campinas'),
-       ('DISOC','Guarulhos'),
-       ('DISOC','Belo Horizonte'),
-       ('DINTE','Sao Paulo');
+VALUES ('DIDES', 'NORTE'),
+       ('DIDES','SUL'),
+       ('DIRUR','SUL'),
+       ('DIMAC','SUL'),
+       ('DIMAC','NORTE'),
+       ('DINTE','SUDESTE'),
+       ('DISOC','SUDESTE');
 
 -- Tabela Financa
 INSERT INTO Financa (fonte_financa, quantia)
